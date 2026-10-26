@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#0b1020">
+
+    <meta name="description"
+          content="Official developer portfolio of Bilal Ahmad Arsalan.
+          Explore Android applications, software projects, and development work.">
+
+    <meta name="author" content="Bilal Ahmad Arsalan">
+
+    <title>Bilal Ahmad Arsalan | Software Developer</title>
+
+    <link rel="icon"
+          href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230b1020'/%3E%3Ctext x='50' y='67' font-size='54' text-anchor='middle' font-family='Arial' font-weight='bold' fill='%2360a5fa'%3EB%3C/text%3E%3C/svg%3E">
+
+    <style>
+        /* =========================
+           1. GLOBAL STYLES
+        ========================= */
+
+        :root {
+            --bg: #0b1020;
+            --bg-soft: #10172b;
+            --card: #111a30;
+            --card-hover: #16213b;
+
+            --primary: #60a5fa;
+            --primary-dark: #3b82f6;
+            --accent: #f59e0b;
+
+            --text: #f1f5f9;
+            --muted: #9caac0;
+            --border: rgba(148, 163, 184, 0.15);
+
+            --container: 1120px;
+            --radius: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            width: min(100% - 40px, var(--container));
+            margin-inline: auto;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-alt {
+            background: rgba(255, 255, 255, 0.015);
+            border-top: 1px solid rgba(148, 163, 184, 0.05);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.05);
+        }
+
+        .section-heading {
+            max-width: 650px;
+            margin-bottom: 45px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 24px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        h1,
+        h2,
+        h3 {
+            line-height: 1.2;
+            letter-spacing: -0.7px;
+        }
+
+        h2 {
+            font-size: clamp(30px, 4vw, 44px);
+            margin-bottom: 18px;
+        }
+
+        .section-description {
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(
+                100deg,
+                #60a5fa,
+                #a5b4fc,
+                #f59e0b
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            min-height: 48px;
+            padding: 12px 22px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 700;
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-primary {
+            background: var(--primary-dark);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+        }
+
+        /* =========================
+           2. HEADER / NAVIGATION
+        ========================= */
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 16, 32, 0.88);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 16px;
+            white-space: nowrap;
+        }
+
+        .brand-logo {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 13px;
+            background: linear-gradient(
+                135deg,
+                #1d4ed8,
+                #60a5fa
+            );
+            color: white;
+            font-size: 23px;
+            font-weight: 900;
+        }
+
+        .brand small {
+            display: block;
+            color: var(--muted);
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--card);
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           3. HERO SECTION
+        ========================= */
+
+        .hero {
+            position: relative;
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            padding: 100px 0;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 550px;
+            height: 550px;
+            right: -180px;
+            top: -120px;
+            background: radial-gradient(
+                circle,
+                rgba(59, 130, 246, 0.16),
+                transparent 70%
+            );
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            left: -180px;
+            bottom: -150px;
+            background: radial-gradient(
+                circle,
+                rgba(245, 158, 11, 0.08),
+                transparent 70%
+            );
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            align-items: center;
+            gap: 70px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .availability {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 13px;
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.03);
+            color: #cbd5e1;
+            font-size: 12px;
+            margin-bottom: 25px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #34d399;
+            border-radius: 50%;
+            box-shadow: 0 0 12px rgba(52, 211, 153, 0.5);
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 70px);
+            font-weight: 900;
+            line-height: 1.08;
+            margin-bottom: 22px;
+        }
+
+        .hero-description {
+            max-width: 600px;
+            color: var(--muted);
+            font-size: 17px;
+            line-height: 1.9;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        .hero-note {
+            color: #71819b;
+            font-size: 12px;
+            margin-top: 28px;
+        }
+
+        .hero-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .profile-card {
+            position: relative;
+            width: 310px;
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 35px;
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            border-radius: 28px;
+            background: linear-gradient(
+                145deg,
+                rgba(30, 58, 110, 0.45),
+                rgba(17, 26, 48, 0.9)
+            );
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.25);
+        }
+
+        .profile-monogram {
+            width: 130px;
+            height: 130px;
+            display: grid;
+            place-items: center;
+            border-radius: 35px;
+            background: linear-gradient(
+                135deg,
+                #1d4ed8,
+                #60a5fa
+            );
+            color: white;
+            font-size: 68px;
+            font-weight: 900;
+            margin-bottom: 28px;
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.25);
+        }
+
+        .profile-card h3 {
+            font-size: 23px;
+            margin-bottom: 8px;
+        }
+
+        .profile-card p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .floating-tag {
+            position: absolute;
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: #121c32;
+            color: #dbeafe;
+            font-size: 12px;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .tag-one {
+            top: 25px;
+            left: -25px;
+        }
+
+        .tag-two {
+            right: -20px;
+            bottom: 35px;
+        }
+
+        /* =========================
+           4. ABOUT SECTION
+        ========================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        .about-highlights {
+            display: grid;
+            gap: 15px;
+        }
+
+        .highlight {
+            display: flex;
+            align-items: flex-start;
+            gap: 17px;
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .highlight-icon {
+            width: 45px;
+            height: 45px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: rgba(59, 130, 246, 0.12);
+            font-size: 21px;
+        }
+
+        .highlight h3 {
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+
+        .highlight p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* =========================
+           5. SKILLS SECTION
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .skill-card {
+            padding: 25px 20px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: var(--card);
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(96, 165, 250, 0.5);
+        }
+
+        .skill-icon {
+            font-size: 27px;
+            margin-bottom: 16px;
+        }
+
+        .skill-card h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           6. PROJECTS SECTION
+        ========================= */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--card);
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(96, 165, 250, 0.4);
+            background: var(--card-hover);
+        }
+
+        .project-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 24px;
+        }
+
+        .project-icon {
+            width: 58px;
+            height: 58px;
+            display: grid;
+            place-items: center;
+            border-radius: 17px;
+            background: rgba(59, 130, 246, 0.12);
+            font-size: 29px;
+        }
+
+        .project-number {
+            color: #71819b;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .project-card h3 {
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .project-card > p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 22px;
+            flex-grow: 1;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 23px;
+        }
+
+        .project-tags span {
+            padding: 5px 10px;
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            color: #b6c6dc;
+            font-size: 11px;
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            padding-top: 18px;
+            border-top: 1px solid var(--border);
+        }
+
+        .project-links a {
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .project-links a:hover {
+            color: #bfdbfe;
+            text-decoration: underline;
+        }
+
+        .project-links .muted-link {
+            color: var(--muted);
+        }
+
+        .projects-note {
+            margin-top: 25px;
+            color: #71819b;
+            font-size: 12px;
+        }
+
+        /* =========================
+           7. WORK APPROACH
+        ========================= */
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .process-card {
+            padding: 27px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: var(--card);
+        }
+
+        .process-number {
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .process-card h3 {
+            font-size: 19px;
+            margin-bottom: 12px;
+        }
+
+        .process-card p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* =========================
+           8. CONTACT SECTION
+        ========================= */
+
+        .contact-box {
+            position: relative;
+            overflow: hidden;
+            padding: 65px 35px;
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            border-radius: 26px;
+            text-align: center;
+            background: linear-gradient(
+                135deg,
+                rgba(30, 58, 110, 0.35),
+                rgba(17, 26, 48, 0.9)
+            );
+        }
+
+        .contact-box h2 {
+            margin-bottom: 18px;
+        }
+
+        .contact-box > p {
+            max-width: 600px;
+            margin: 0 auto 28px;
+            color: var(--muted);
+        }
+
+        .contact-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        /* =========================
+           9. FOOTER
+        ========================= */
+
+        .footer {
+            padding: 30px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .footer p {
+            color: #71819b;
+            font-size: 12px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* =========================
+           10. ANIMATIONS
+        ========================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition:
+                opacity 0.6s ease,
+                transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================
+           11. RESPONSIVE DESIGN
+        ========================= */
+
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 55px;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero-description {
+                margin-inline: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                margin-top: 10px;
+            }
+
+            .about-grid {
+                gap: 35px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-links {
+                gap: 18px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .container {
+                width: min(100% - 30px, var(--container));
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .nav {
+                min-height: 68px;
+            }
+
+            .brand {
+                font-size: 14px;
+            }
+
+            .brand-logo {
+                width: 38px;
+                height: 38px;
+            }
+
+            .menu-toggle {
+                display: grid;
+                place-items: center;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 15px;
+                right: 15px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 10px;
+                border: 1px solid var(--border);
+                border-radius: 16px;
+                background: #111a30;
+                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 13px 12px;
+                border-radius: 9px;
+            }
+
+            .nav-links a:hover {
+                background: rgba(96, 165, 250, 0.08);
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 75px 0;
+            }
+
+            .hero h1 {
+                font-size: clamp(39px, 11vw, 58px);
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .profile-card {
+                width: min(100%, 310px);
+                min-height: 310px;
+                padding: 28px;
+            }
+
+            .profile-monogram {
+                width: 105px;
+                height: 105px;
+                font-size: 55px;
+            }
+
+            .tag-one {
+                left: -5px;
+            }
+
+            .tag-two {
+                right: -5px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+
+            .skill-card {
+                padding: 19px 15px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card {
+                padding: 23px;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-box {
+                padding: 45px 22px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+        <div class="container nav">
+
+            <a href="#home" class="brand" aria-label="Home">
+                <span class="brand-logo">B</span>
+
+                <span>
+                    Bilal Ahmad Arsalan
+                    <small>Developer Portfolio</small>
+                </span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="navLinks">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="hero" id="home">
+
+            <div class="container hero-grid">
+
+                <div class="hero-content reveal">
+
+                    <div class="availability">
+                        <span class="status-dot"></span>
+                        Independent Software Developer
+                    </div>
+
+                    <h1>
+                        Building useful<br>
+                        digital products<br>
+                        <span class="gradient-text">
+                            with purpose.
+                        </span>
+                    </h1>
+
+                    <p class="hero-description">
+                        I'm Bilal Ahmad Arsalan, a software developer
+                        interested in building practical Android
+                        applications, offline-first experiences,
+                        and software that makes everyday tasks easier.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#projects" class="btn btn-primary">
+                            Explore My Projects →
+                        </a>
+
+                        <a href="#contact" class="btn btn-secondary">
+                            Get in Touch
+                        </a>
+
+                    </div>
+
+                    <p class="hero-note">
+                        Android Development · Java · Databases · Python
+                    </p>
+
+                </div>
+
+                <div class="hero-visual reveal">
+
+                    <div class="profile-card">
+
+                        <div class="profile-monogram">B</div>
+
+                        <h3>Bilal Ahmad Arsalan</h3>
+
+                        <p>
+                            Software Developer
+                        </p>
+
+                        <p style="margin-top: 10px;">
+                            Building one project at a time.
+                        </p>
+
+                    </div>
+
+                    <div class="floating-tag tag-one">
+                        Android & Java
+                    </div>
+
+                    <div class="floating-tag tag-two">
+                        Learning · Building · Improving
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section class="section section-alt" id="about">
+
+            <div class="container">
+
+                <div class="about-grid">
+
+                    <div class="about-text reveal">
+
+                        <div class="eyebrow">About Me</div>
+
+                        <h2>
+                            Technology should solve
+                            <span class="gradient-text">
+                                real problems.
+                            </span>
+                        </h2>
+
+                        <p>
+                            My development interests include Android
+                            applications, database-driven software,
+                            educational tools, and products designed
+                            to be practical and accessible.
+                        </p>
+
+                        <p>
+                            I enjoy working on the complete development
+                            process, from planning features and
+                            structuring data to implementing interfaces,
+                            improving performance, and preparing
+                            applications for release.
+                        </p>
+
+                        <p>
+                            My focus is on building useful products,
+                            improving my engineering skills, and
+                            turning ideas into working software.
+                        </p>
+
+                    </div>
+
+                    <div class="about-highlights reveal">
+
+                        <div class="highlight">
+
+                            <div class="highlight-icon">📱</div>
+
+                            <div>
+                                <h3>Mobile Applications</h3>
+
+                                <p>
+                                    Android apps designed around
+                                    usability, performance, and
+                                    practical everyday needs.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="highlight">
+
+                            <div class="highlight-icon">🗄️</div>
+
+                            <div>
+                                <h3>Data-Driven Software</h3>
+
+                                <p>
+                                    Database-backed applications,
+                                    structured content, and offline
+                                    data access.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="highlight">
+
+                            <div class="highlight-icon">💡</div>
+
+                            <div>
+                                <h3>Continuous Improvement</h3>
+
+                                <p>
+                                    Learning new techniques, refining
+                                    existing projects, and improving
+                                    software quality over time.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             SKILLS
+        ========================== -->
+
+        <section class="section" id="skills">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="eyebrow">Skills & Technologies</div>
+
+                    <h2>
+                        Tools I use to
+                        <span class="gradient-text">build.</span>
+                    </h2>
+
+                    <p class="section-description">
+                        Technologies and development areas I work
+                        with across my software projects.
+                    </p>
+
+                </div>
+
+                <div class="skills-grid">
+
+                    <div class="skill-card reveal">
+                        <div class="skill-icon">📱</div>
+                        <h3>Android</h3>
+                        <p>
+                            Android application development,
+                            user interfaces, and app integration.
+                        </p>
+                    </div>
+
+                    <div class="skill-card reveal">
+                        <div class="skill-icon">☕</div>
+                        <h3>Java</h3>
+                        <p>
+                            Application logic, object-oriented
+                            programming, and Android development.
+                        </p>
+                    </div>
+
+                    <div class="skill-card reveal">
+                        <div class="skill-icon">🗃️</div>
+                        <h3>SQLite</h3>
+                        <p>
+                            Local databases, structured records,
+                            queries, and offline data storage.
+                        </p>
+                    </div>
+
+                    <div class="skill-card reveal">
+                        <div class="skill-icon">🐍</div>
+                        <h3>Python</h3>
+                        <p>
+                            Automation, database utilities,
+                            data processing, and import scripts.
+                        </p>
+                    </div>
+
+                    <div class="skill-card reveal">
+                        <div class="skill-icon">🌐</div>
+                        <h3>HTML & CSS</h3>
+                        <p>
+                            Responsive websites, layouts,
+                            visual styling, and accessibility.
+                        </p>
+                    </div>
+
+                    <div class="skill-card reveal">
+                        <div class="skill-icon">⚙️</div>
+                        <h3>JavaScript</h3>
+                        <p>
+                            Browser interactions, navigation,
+                            and lightweight web functionality.
+                        </p>
+                    </div>
+
+                    <div class="skill-card reveal">
+                        <div class="skill-icon">🧩</div>
+                        <h3>Software Design</h3>
+                        <p>
+                            Feature planning, data organization,
+                            maintainability, and problem solving.
+                        </p>
+                    </div>
+
+                    <div class="skill-card reveal">
+                        <div class="skill-icon">🚀</div>
+                        <h3>App Publishing</h3>
+                        <p>
+                            Application packaging, testing,
+                            store listings, and release preparation.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             PROJECTS
+        ========================== -->
+
+        <section class="section section-alt" id="projects">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="eyebrow">Selected Work</div>
+
+                    <h2>
+                        Projects & <span class="gradient-text">
+                            products.
+                        </span>
+                    </h2>
+
+                    <p class="section-description">
+                        A collection of applications and software
+                        projects covering language tools, learning,
+                        productivity, and digital experiences.
+                    </p>
+
+                </div>
+
+                <div class="projects-grid">
+
+                    <!-- PROJECT 01 -->
+
+                    <article class="project-card reveal">
+
+                        <div class="project-top">
+
+                            <div class="project-icon">📚</div>
+
+                            <div class="project-number">
+                                PROJECT 01
+                            </div>
+
+                        </div>
+
+                        <h3>Pashto Dictionary</h3>
+
+                        <p>
+                            An English–Pashto dictionary application
+                            focused on word lookup, accessible
+                            definitions, and convenient language
+                            reference. Designed to support offline
+                            dictionary access.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Android</span>
+                            <span>Java</span>
+                            <span>SQLite</span>
+                            <span>Language Tools</span>
+                        </div>
+
+                        <div class="project-links">
+
+                            <a href="https://sites.google.com/view/pashto-dictionary-legal/privacy-policy"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                Privacy Policy ↗
+                            </a>
+
+                            <a href="app-ads.txt">
+                                app-ads.txt ↗
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PROJECT 02 -->
+
+                    <article class="project-card reveal">
+
+                        <div class="project-top">
+
+                            <div class="project-icon">📖</div>
+
+                            <div class="project-number">
+                                PROJECT 02
+                            </div>
+
+                        </div>
+
+                        <h3>Pashto Quran Pro</h3>
+
+                        <p>
+                            A Quran reading project focused on
+                            accessible scripture navigation, verse
+                            browsing, bookmarks, and multilingual
+                            reading features.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Android</span>
+                            <span>Java</span>
+                            <span>SQLite</span>
+                            <span>Reading Tools</span>
+                        </div>
+
+                        <div class="project-links">
+
+                            <a href="#contact">
+                                Project Enquiries ↗
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PROJECT 03 -->
+
+                    <article class="project-card reveal">
+
+                        <div class="project-top">
+
+                            <div class="project-icon">💻</div>
+
+                            <div class="project-number">
+                                PROJECT 03
+                            </div>
+
+                        </div>
+
+                        <h3>Skillio</h3>
+
+                        <p>
+                            An educational application concept
+                            centered on structured learning,
+                            step-by-step lessons, practical
+                            explanations, and organized course
+                            content.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Education</span>
+                            <span>Android</span>
+                            <span>Java</span>
+                            <span>Learning Systems</span>
+                        </div>
+
+                        <div class="project-links">
+
+                            <a href="#contact">
+                                Project Enquiries ↗
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PROJECT 04 -->
+
+                    <article class="project-card reveal">
+
+                        <div class="project-top">
+
+                            <div class="project-icon">🧠</div>
+
+                            <div class="project-number">
+                                PROJECT 04
+                            </div>
+
+                        </div>
+
+                        <h3>Word Search Game</h3>
+
+                        <p>
+                            A word puzzle game project featuring
+                            generated grids, progressive difficulty,
+                            word discovery, and level-based gameplay.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Android</span>
+                            <span>Java</span>
+                            <span>Game Logic</span>
+                            <span>Algorithms</span>
+                        </div>
+
+                        <div class="project-links">
+
+                            <a href="#contact">
+                                Project Enquiries ↗
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+                <p class="projects-note reveal">
+                    Project descriptions highlight development work.
+                    Availability and release status may vary.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             DEVELOPMENT APPROACH
+        ========================== -->
+
+        <section class="section" id="approach">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <div class="eyebrow">Development Approach</div>
+
+                    <h2>
+                        From idea to
+                        <span class="gradient-text">
+                            implementation.
+                        </span>
+                    </h2>
+
+                    <p class="section-description">
+                        A practical approach to creating software
+                        that is useful, maintainable, and easy to use.
+                    </p>
+
+                </div>
+
+                <div class="process-grid">
+
+                    <div class="process-card reveal">
+
+                        <div class="process-number">
+                            01 / PLAN
+                        </div>
+
+                        <h3>Understand the Problem</h3>
+
+                        <p>
+                            Identify the purpose, organize requirements,
+                            and plan features around real user needs.
+                        </p>
+
+                    </div>
+
+                    <div class="process-card reveal">
+
+                        <div class="process-number">
+                            02 / BUILD
+                        </div>
+
+                        <h3>Develop the Solution</h3>
+
+                        <p>
+                            Implement application logic, structure
+                            the data, and create an intuitive
+                            user experience.
+                        </p>
+
+                    </div>
+
+                    <div class="process-card reveal">
+
+                        <div class="process-number">
+                            03 / IMPROVE
+                        </div>
+
+                        <h3>Test and Refine</h3>
+
+                        <p>
+                            Check functionality, resolve issues,
+                            improve performance, and prepare
+                            the product for release.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <section class="section section-alt" id="contact">
+
+            <div class="container">
+
+                <div class="contact-box reveal">
+
+                    <div class="eyebrow">
+                        Get in Touch
+                    </div>
+
+                    <h2>
+                        Have an idea?
+                        <span class="gradient-text">
+                            Let's connect.
+                        </span>
+                    </h2>
+
+                    <p>
+                        For questions about my projects, software
+                        development, or potential collaborations,
+                        you can reach me through email or GitHub.
+                    </p>
+
+                    <div class="contact-actions">
+
+                        <a href="mailto:ASDCdev.kdrware@gmail.com"
+                           class="btn btn-primary">
+                            ✉ Contact by Email
+                        </a>
+
+                        <a href="https://github.com/bilalahmadarsalan"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="btn btn-secondary">
+                            View GitHub Profile ↗
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-inner">
+
+            <p>
+                © <span id="currentYear"></span>
+                Bilal Ahmad Arsalan. All rights reserved.
+            </p>
+
+            <div class="footer-links">
+
+                <a href="#home">Back to Top ↑</a>
+
+                <a href="https://sites.google.com/view/pashto-dictionary-legal/privacy-policy"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Dictionary Privacy Policy
+                </a>
+
+                <a href="app-ads.txt">
+                    app-ads.txt
+                </a>
+
+                <a href="https://github.com/bilalahmadarsalan"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+        // Update the copyright year automatically.
+
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+
+        // Mobile navigation menu.
+
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", function () {
+
+            const isOpen = navLinks.classList.toggle("open");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
+
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen
+                    ? "Close navigation menu"
+                    : "Open navigation menu"
+            );
+
+            menuToggle.textContent = isOpen ? "✕" : "☰";
+
+        });
+
+        // Close the mobile menu after selecting a section.
+
+        navLinks.querySelectorAll("a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                navLinks.classList.remove("open");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuToggle.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+
+                menuToggle.textContent = "☰";
+
+            });
+
+        });
+
+        // Reveal sections as they enter the viewport.
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+        if ("IntersectionObserver" in window) {
+
+            const observer = new IntersectionObserver(
+                function (entries, observerInstance) {
+
+                    entries.forEach(function (entry) {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("visible");
+
+                            observerInstance.unobserve(entry.target);
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.08
+                }
+            );
+
+            revealElements.forEach(function (element) {
+                observer.observe(element);
+            });
+
+        } else {
+
+            revealElements.forEach(function (element) {
+                element.classList.add("visible");
+            });
+
+        }
+
+        // Highlight the navigation link for the visible section.
+
+        const sections = document.querySelectorAll(
+            "main section[id]"
+        );
+
+        const navigationLinks =
+            document.querySelectorAll(".nav-links a");
+
+        if ("IntersectionObserver" in window) {
+
+            const sectionObserver = new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(function (entry) {
+
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
+
+                        navigationLinks.forEach(function (link) {
+
+                            const isCurrent =
+                                link.getAttribute("href") ===
+                                "#" + entry.target.id;
+
+                            link.classList.toggle(
+                                "active",
+                                isCurrent
+                            );
+
+                        });
+
+                    });
+
+                },
+                {
+                    rootMargin: "-25% 0px -65% 0px"
+                }
+            );
+
+            sections.forEach(function (section) {
+                sectionObserver.observe(section);
+            });
+
+        }
+    </script>
+
+</body>
+</html>
